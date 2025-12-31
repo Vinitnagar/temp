@@ -1,0 +1,15 @@
+up:
+  docker compose up --build
+
+down:
+  docker compose down
+
+logs:
+  docker compose logs -f
+
+tunnel:
+  cloudflared tunnel --config ./config.yml run kafka-edge
+
+start: 
+  just up
+  just tunnel
